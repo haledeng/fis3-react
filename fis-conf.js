@@ -13,6 +13,9 @@ fis.hook('node_modules');
 fis.match('/{node_modules,modules}/**.{js,jsx}', {
 		isMod: true
 	})
+	.match('**.md', {
+		release: false
+	})
 	.match('/(**).jsx', {
 		parser: fis.plugin('babel-5.x', {
 			blacklist: ['regenerator'],
@@ -29,7 +32,7 @@ fis.match('/{node_modules,modules}/**.{js,jsx}', {
 	})
 	.match('**.{js,es,es6,jsx,ts,tsx}', {
 		preprocessor: fis.plugin('js-require-css', {
-			mode: 'jsRequire'
+			// mode: 'jsRequire'
 		})
 	})
 	// .match(/pages\/([^\/]*).*\.js/, {
@@ -50,8 +53,9 @@ fis.media('dev')
 				'/pages/index/index.jsx',
 				'/pages/index/index.jsx:deps'
 			],
-			// not work
-			'pkg/index.css' : [
+			// js-require-css 不能设置 mode: 'jsRequire'，改变了css的isCssLike属性
+			'pkg/index.css': [
+				'/pages/index/index.jsx',
 				'/pages/index/index.jsx:deps'
 			]
 		})

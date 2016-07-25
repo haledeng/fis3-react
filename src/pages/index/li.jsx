@@ -1,4 +1,4 @@
-require('./li.less');
+// require('./li.less');
 import React, {Component} from 'react';
 
 
