@@ -16,3 +16,8 @@ react 包可以使用node_modules来处理, fis3-hook-node_modules
 ### css的引入方式
 + 通过dep-pack打包css，html文件中直接引入（对应的jsx文件中不能require css，非模块）
 + 通过jsx中require的方式引入，插件js-require-css来处理（css模块方式引入）
+
+
+
+### dom操作
++ 通过state或者props来触发dom的更新操作

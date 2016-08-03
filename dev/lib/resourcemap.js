@@ -13,9 +13,8 @@ require.resourceMap({
             "type": "js",
             "deps": [
                 "node_modules/react/react.js",
-                "pages/index/ul",
-                "pages/index/dialog",
-                "node_modules/react-dom/index.js"
+                "node_modules/react-dom/index.js",
+                "pages/index/container"
             ],
             "pkg": "p1"
         },
@@ -380,31 +379,6 @@ require.resourceMap({
                 "node_modules/fbjs/lib/invariant.js"
             ],
             "pkg": "p0"
-        },
-        "pages/index/ul": {
-            "uri": "./pages/index/ul.js",
-            "type": "js",
-            "deps": [
-                "pages/index/li",
-                "node_modules/react/react.js"
-            ],
-            "pkg": "p1"
-        },
-        "pages/index/li": {
-            "uri": "./pages/index/li.js",
-            "type": "js",
-            "deps": [
-                "node_modules/react/react.js"
-            ],
-            "pkg": "p1"
-        },
-        "pages/index/dialog": {
-            "uri": "./pages/index/dialog.js",
-            "type": "js",
-            "deps": [
-                "node_modules/react/react.js"
-            ],
-            "pkg": "p1"
         },
         "node_modules/react-dom/index.js": {
             "uri": "./node_modules/react-dom/index.js",
@@ -2219,9 +2193,39 @@ require.resourceMap({
             "uri": "./lib/react.js",
             "type": "js"
         },
-        "pages/index/li.less": {
-            "uri": "./pages/index/li.css",
+        "modules/dialog/dialog": {
+            "uri": "./modules/dialog/dialog.js",
+            "type": "js",
+            "extras": {},
+            "deps": [
+                "modules/dialog/dialog.css",
+                "node_modules/react/react.js"
+            ],
+            "pkg": "p1"
+        },
+        "modules/dialog/dialog.css.js": {
+            "uri": "./modules/dialog/dialog.css.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "modules/dialog/dialog.css"
+            }
+        },
+        "modules/dialog/dialog.less": {
+            "uri": "./modules/dialog/dialog.css",
             "type": "css"
+        },
+        "modules/popup/popup": {
+            "uri": "./modules/popup/popup.js",
+            "type": "js"
+        },
+        "pages/index/container": {
+            "uri": "./pages/index/container.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js",
+                "modules/dialog/dialog"
+            ],
+            "pkg": "p1"
         }
     },
     "pkg": {
@@ -2405,12 +2409,12 @@ require.resourceMap({
             "uri": "./pkg/index.js",
             "type": "js",
             "has": [
-                "pages/index/li",
-                "pages/index/ul",
-                "pages/index/dialog",
+                "modules/dialog/dialog",
+                "pages/index/container",
                 "pages/index/index"
             ],
             "deps": [
+                "modules/dialog/dialog.css",
                 "node_modules/react/react.js",
                 "node_modules/react-dom/index.js"
             ]

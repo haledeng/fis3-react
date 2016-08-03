@@ -1,6 +1,5 @@
 define('pages/index/li', function(require, exports, module) {
 
-  // require('./li.less');
   'use strict';
   
   Object.defineProperty(exports, '__esModule', {
@@ -20,6 +19,8 @@ define('pages/index/li', function(require, exports, module) {
   var _react = require('node_modules/react/react');
   
   var _react2 = _interopRequireDefault(_react);
+  
+  require('pages/index/li.css');
   
   var Li = (function (_Component) {
   	_inherits(Li, _Component);

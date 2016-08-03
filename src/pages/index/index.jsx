@@ -1,13 +1,20 @@
 import React from 'react';
-import Ul from './ul.jsx';
-import Dialog from './dialog.jsx';
-import {render} from 'react-dom';
+import {
+	render
+} from 'react-dom';
+import Container from  './container'
 
-const person = [
-	{name: 'helon', age: 26},
-	{name: 'lucal', age: 30}
-];
-render(
-	<Ul person={person}/>,
+const buttons = [{
+	text: 'confirm'
+}, {
+	text: 'cancel'
+}];
+
+const confirm = () => {
+	console.log('comfirm');
+}
+
+render( 
+	<Container />,
 	document.getElementById('container')
 );
