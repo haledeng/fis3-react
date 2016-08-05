@@ -1,21 +1,23 @@
 import './dialog.less';
-import React, {Component} from 'react';
+import React, {
+	Component
+} from 'react';
 
 const Dialog = React.createClass({
-    getInitialState(){
-      	return {
-      		isShow: true
-        }
-    },
-    hide() {
-    	this.setState({
-    		isShow: false
-    	});
-    },
-    comfirm() {
-    	this.hide();
-    	this.props.comfirm();
-    },
+	getInitialState() {
+		return {
+			isShow: true
+		}
+	},
+	hide() {
+		this.setState({
+			isShow: false
+		});
+	},
+	comfirm() {
+		this.hide();
+		this.props.comfirm();
+	},
 	render() {
 		const self = this;
 		return (
@@ -30,8 +32,8 @@ const Dialog = React.createClass({
 						<div role="content" className="dialog-container">{this.props.content}</div>
 					</div>
 					<div role="footer" className="dialog-ft">
-						{this.props.buttons.map(function(button){
-							return (<button role="button" key={button.text} className="btn" onClick={self.comfirm}>{button.text}</button>)
+						{this.props.buttons.map(function(button, index){
+							return (<button role="button" key={index} className="btn" onClick={self.comfirm}>{button.text}</button>)
 						})}
 					</div>
 				</div>

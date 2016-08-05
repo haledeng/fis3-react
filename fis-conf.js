@@ -27,7 +27,7 @@ fis.match('/{node_modules,modules}/**.{js,jsx}', {
 	})
 	.match('*.less', {
 		parser: fis.plugin('less-2.x', {}),
-		rExt: '.css'
+		rExt: '.css',
 
 	})
 	.match('**.{js,es,es6,jsx,ts,tsx}', {
@@ -47,13 +47,19 @@ fis.media('dev')
 				'/node_modules/react/react.js',
 				'/node_modules/react/react.js:deps',
 				'/node_modules/react-dom/index.js',
-				'/node_modules/react-dom/index.js:deps'
+				'/node_modules/react-dom/index.js:deps',
+				'/node_modules/react-redux/lib/index.js',
+				'/node_modules/react-redux/lib/index.js:deps'
 			],
 			'pkg/index.js': [
 				'/pages/index/index.jsx',
 				'/pages/index/index.jsx:deps'
 			],
-			// // js-require-css 不能设置 mode: 'jsRequire'，改变了css的isCssLike属性
+			'pkg/redux.js': [
+				'/pages/redux/index.jsx',
+				'/pages/redux/index.jsx:deps'
+			],
+			// js-require-css 不能设置 mode: 'jsRequire'，改变了css的isCssLike属性
 			// 'pkg/index.css': [
 			// 	'/pages/index/index.jsx',
 			// 	'/pages/index/index.jsx:deps'

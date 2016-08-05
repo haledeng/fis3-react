@@ -1,4 +1,4 @@
-define('pages/index/ul', function(require, exports, module) {
+define('pages/redux/input', function(require, exports, module) {
 
   'use strict';
   
@@ -16,42 +16,56 @@ define('pages/index/ul', function(require, exports, module) {
   
   function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
   
-  var _liJsx = require('pages/index/li');
-  
-  var _liJsx2 = _interopRequireDefault(_liJsx);
-  
   var _react = require('node_modules/react/react');
   
   var _react2 = _interopRequireDefault(_react);
   
-  // loop item should has key prop
+  var Input = (function (_Component) {
+  	_inherits(Input, _Component);
   
-  var Ul = (function (_Component) {
-  	_inherits(Ul, _Component);
+  	function Input(props, context) {
+  		_classCallCheck(this, Input);
   
-  	function Ul() {
-  		_classCallCheck(this, Ul);
-  
-  		_get(Object.getPrototypeOf(Ul.prototype), 'constructor', this).apply(this, arguments);
+  		_get(Object.getPrototypeOf(Input.prototype), 'constructor', this).call(this, props, context);
+  		this.state = {
+  			text: this.props.text || ''
+  		};
   	}
   
-  	_createClass(Ul, [{
+  	_createClass(Input, [{
+  		key: 'handleSubmit',
+  		value: function handleSubmit(e) {
+  			var text = e.target.value;
+  			console.log(text);
+  			if (e.which === 13) {
+  				this.props.onSubmit(text);
+  				this.setState({
+  					text: ''
+  				});
+  			}
+  		}
+  	}, {
+  		key: 'handleChange',
+  		value: function handleChange(e) {
+  			this.setState({
+  				text: e.target.value
+  			});
+  		}
+  	}, {
   		key: 'render',
   		value: function render() {
-  			return _react2['default'].createElement(
-  				'ul',
-  				null,
-  				this.props.person.map(function (prop, i) {
-  					return _react2['default'].createElement(_liJsx2['default'], { people: prop, key: i });
-  				})
-  			);
+  			return _react2['default'].createElement('input', { type: 'text',
+  				autoFocus: 'true',
+  				value: this.state.text,
+  				onChange: this.handleChange.bind(this),
+  				onKeyUp: this.handleSubmit.bind(this) });
   		}
   	}]);
   
-  	return Ul;
+  	return Input;
   })(_react.Component);
   
-  exports['default'] = Ul;
+  exports['default'] = Input;
   module.exports = exports['default'];
 
 });

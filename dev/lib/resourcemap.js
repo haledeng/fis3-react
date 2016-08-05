@@ -13,8 +13,7 @@ require.resourceMap({
             "type": "js",
             "deps": [
                 "node_modules/react/react.js",
-                "node_modules/react-dom/index.js",
-                "pages/index/container"
+                "node_modules/react-dom/index.js"
             ],
             "pkg": "p1"
         },
@@ -2200,8 +2199,7 @@ require.resourceMap({
             "deps": [
                 "modules/dialog/dialog.css",
                 "node_modules/react/react.js"
-            ],
-            "pkg": "p1"
+            ]
         },
         "modules/dialog/dialog.css.js": {
             "uri": "./modules/dialog/dialog.css.js",
@@ -2224,8 +2222,307 @@ require.resourceMap({
             "deps": [
                 "node_modules/react/react.js",
                 "modules/dialog/dialog"
+            ]
+        },
+        "pages/redux/action": {
+            "uri": "./pages/redux/action.js",
+            "type": "js",
+            "pkg": "p2"
+        },
+        "pages/redux/app": {
+            "uri": "./pages/redux/app.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js",
+                "node_modules/redux/lib/index.js",
+                "node_modules/react-redux/lib/index.js",
+                "pages/redux/input",
+                "pages/redux/action"
             ],
-            "pkg": "p1"
+            "pkg": "p2"
+        },
+        "node_modules/redux/lib/index.js": {
+            "uri": "./node_modules/redux/lib/index.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/redux/lib/index"
+            },
+            "deps": [
+                "node_modules/redux/lib/createStore.js",
+                "node_modules/redux/lib/combineReducers.js",
+                "node_modules/redux/lib/bindActionCreators.js",
+                "node_modules/redux/lib/applyMiddleware.js",
+                "node_modules/redux/lib/compose.js",
+                "node_modules/redux/lib/utils/warning.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/redux/lib/createStore.js": {
+            "uri": "./node_modules/redux/lib/createStore.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/redux/lib/createStore"
+            },
+            "deps": [
+                "node_modules/lodash/isPlainObject.js",
+                "node_modules/symbol-observable/index.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/lodash/isPlainObject.js": {
+            "uri": "./node_modules/lodash/isPlainObject.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/lodash/isPlainObject"
+            },
+            "deps": [
+                "node_modules/lodash/_getPrototype.js",
+                "node_modules/lodash/_isHostObject.js",
+                "node_modules/lodash/isObjectLike.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/lodash/_getPrototype.js": {
+            "uri": "./node_modules/lodash/_getPrototype.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/lodash/_getPrototype"
+            },
+            "deps": [
+                "node_modules/lodash/_overArg.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/lodash/_overArg.js": {
+            "uri": "./node_modules/lodash/_overArg.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/lodash/_overArg"
+            },
+            "pkg": "p0"
+        },
+        "node_modules/lodash/_isHostObject.js": {
+            "uri": "./node_modules/lodash/_isHostObject.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/lodash/_isHostObject"
+            },
+            "pkg": "p0"
+        },
+        "node_modules/lodash/isObjectLike.js": {
+            "uri": "./node_modules/lodash/isObjectLike.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/lodash/isObjectLike"
+            },
+            "pkg": "p0"
+        },
+        "node_modules/symbol-observable/index.js": {
+            "uri": "./node_modules/symbol-observable/index.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/symbol-observable/index"
+            },
+            "deps": [
+                "node_modules/symbol-observable/ponyfill.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/symbol-observable/ponyfill.js": {
+            "uri": "./node_modules/symbol-observable/ponyfill.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/symbol-observable/ponyfill"
+            },
+            "pkg": "p0"
+        },
+        "node_modules/redux/lib/combineReducers.js": {
+            "uri": "./node_modules/redux/lib/combineReducers.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/redux/lib/combineReducers"
+            },
+            "deps": [
+                "node_modules/redux/lib/createStore.js",
+                "node_modules/lodash/isPlainObject.js",
+                "node_modules/redux/lib/utils/warning.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/redux/lib/utils/warning.js": {
+            "uri": "./node_modules/redux/lib/utils/warning.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/redux/lib/utils/warning"
+            },
+            "pkg": "p0"
+        },
+        "node_modules/redux/lib/bindActionCreators.js": {
+            "uri": "./node_modules/redux/lib/bindActionCreators.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/redux/lib/bindActionCreators"
+            },
+            "pkg": "p0"
+        },
+        "node_modules/redux/lib/applyMiddleware.js": {
+            "uri": "./node_modules/redux/lib/applyMiddleware.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/redux/lib/applyMiddleware"
+            },
+            "deps": [
+                "node_modules/redux/lib/compose.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/redux/lib/compose.js": {
+            "uri": "./node_modules/redux/lib/compose.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/redux/lib/compose"
+            },
+            "pkg": "p0"
+        },
+        "node_modules/react-redux/lib/index.js": {
+            "uri": "./node_modules/react-redux/lib/index.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/react-redux/lib/index"
+            },
+            "deps": [
+                "node_modules/react-redux/lib/components/Provider.js",
+                "node_modules/react-redux/lib/components/connect.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/react-redux/lib/components/Provider.js": {
+            "uri": "./node_modules/react-redux/lib/components/Provider.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/react-redux/lib/components/Provider"
+            },
+            "deps": [
+                "node_modules/react/react.js",
+                "node_modules/react-redux/lib/utils/storeShape.js",
+                "node_modules/react-redux/lib/utils/warning.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/react-redux/lib/utils/storeShape.js": {
+            "uri": "./node_modules/react-redux/lib/utils/storeShape.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/react-redux/lib/utils/storeShape"
+            },
+            "deps": [
+                "node_modules/react/react.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/react-redux/lib/utils/warning.js": {
+            "uri": "./node_modules/react-redux/lib/utils/warning.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/react-redux/lib/utils/warning"
+            },
+            "pkg": "p0"
+        },
+        "node_modules/react-redux/lib/components/connect.js": {
+            "uri": "./node_modules/react-redux/lib/components/connect.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/react-redux/lib/components/connect"
+            },
+            "deps": [
+                "node_modules/react/react.js",
+                "node_modules/react-redux/lib/utils/storeShape.js",
+                "node_modules/react-redux/lib/utils/shallowEqual.js",
+                "node_modules/react-redux/lib/utils/wrapActionCreators.js",
+                "node_modules/react-redux/lib/utils/warning.js",
+                "node_modules/lodash/isPlainObject.js",
+                "node_modules/hoist-non-react-statics/index.js",
+                "node_modules/invariant/browser.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/react-redux/lib/utils/shallowEqual.js": {
+            "uri": "./node_modules/react-redux/lib/utils/shallowEqual.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/react-redux/lib/utils/shallowEqual"
+            },
+            "pkg": "p0"
+        },
+        "node_modules/react-redux/lib/utils/wrapActionCreators.js": {
+            "uri": "./node_modules/react-redux/lib/utils/wrapActionCreators.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/react-redux/lib/utils/wrapActionCreators"
+            },
+            "deps": [
+                "node_modules/redux/lib/index.js"
+            ],
+            "pkg": "p0"
+        },
+        "node_modules/hoist-non-react-statics/index.js": {
+            "uri": "./node_modules/hoist-non-react-statics/index.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/hoist-non-react-statics/index"
+            },
+            "pkg": "p0"
+        },
+        "node_modules/invariant/browser.js": {
+            "uri": "./node_modules/invariant/browser.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/invariant/browser"
+            },
+            "pkg": "p0"
+        },
+        "pages/redux/index": {
+            "uri": "./pages/redux/index.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js",
+                "node_modules/react-dom/index.js",
+                "node_modules/react-redux/lib/index.js",
+                "pages/redux/store",
+                "pages/redux/app"
+            ],
+            "pkg": "p2"
+        },
+        "pages/redux/input": {
+            "uri": "./pages/redux/input.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js"
+            ],
+            "pkg": "p2"
+        },
+        "pages/redux/reducer": {
+            "uri": "./pages/redux/reducer.js",
+            "type": "js",
+            "deps": [
+                "node_modules/redux/lib/index.js",
+                "pages/redux/reducer-add"
+            ],
+            "pkg": "p2"
+        },
+        "pages/redux/reducer-add": {
+            "uri": "./pages/redux/reducer-add.js",
+            "type": "js",
+            "pkg": "p2"
+        },
+        "pages/redux/store": {
+            "uri": "./pages/redux/store.js",
+            "type": "js",
+            "deps": [
+                "node_modules/redux/lib/index.js",
+                "pages/redux/reducer"
+            ],
+            "pkg": "p2"
         }
     },
     "pkg": {
@@ -2402,20 +2699,59 @@ require.resourceMap({
                 "node_modules/react/lib/findDOMNode.js",
                 "node_modules/react/lib/renderSubtreeIntoContainer.js",
                 "node_modules/react/lib/ReactDOM.js",
-                "node_modules/react-dom/index.js"
+                "node_modules/react-dom/index.js",
+                "node_modules/react-redux/lib/utils/storeShape.js",
+                "node_modules/react-redux/lib/utils/warning.js",
+                "node_modules/react-redux/lib/components/Provider.js",
+                "node_modules/react-redux/lib/utils/shallowEqual.js",
+                "node_modules/lodash/_overArg.js",
+                "node_modules/lodash/_getPrototype.js",
+                "node_modules/lodash/_isHostObject.js",
+                "node_modules/lodash/isObjectLike.js",
+                "node_modules/lodash/isPlainObject.js",
+                "node_modules/symbol-observable/ponyfill.js",
+                "node_modules/symbol-observable/index.js",
+                "node_modules/redux/lib/createStore.js",
+                "node_modules/redux/lib/utils/warning.js",
+                "node_modules/redux/lib/combineReducers.js",
+                "node_modules/redux/lib/bindActionCreators.js",
+                "node_modules/redux/lib/compose.js",
+                "node_modules/redux/lib/applyMiddleware.js",
+                "node_modules/redux/lib/index.js",
+                "node_modules/react-redux/lib/utils/wrapActionCreators.js",
+                "node_modules/hoist-non-react-statics/index.js",
+                "node_modules/invariant/browser.js",
+                "node_modules/react-redux/lib/components/connect.js",
+                "node_modules/react-redux/lib/index.js"
             ]
         },
         "p1": {
             "uri": "./pkg/index.js",
             "type": "js",
             "has": [
-                "modules/dialog/dialog",
-                "pages/index/container",
                 "pages/index/index"
             ],
             "deps": [
-                "modules/dialog/dialog.css",
                 "node_modules/react/react.js",
+                "node_modules/react-dom/index.js"
+            ]
+        },
+        "p2": {
+            "uri": "./pkg/redux.js",
+            "type": "js",
+            "has": [
+                "pages/redux/reducer-add",
+                "pages/redux/reducer",
+                "pages/redux/store",
+                "pages/redux/input",
+                "pages/redux/action",
+                "pages/redux/app",
+                "pages/redux/index"
+            ],
+            "deps": [
+                "node_modules/redux/lib/index.js",
+                "node_modules/react/react.js",
+                "node_modules/react-redux/lib/index.js",
                 "node_modules/react-dom/index.js"
             ]
         }

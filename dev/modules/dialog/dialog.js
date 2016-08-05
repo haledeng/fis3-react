@@ -66,10 +66,10 @@ define('modules/dialog/dialog', function(require, exports, module) {
   				_react2['default'].createElement(
   					'div',
   					{ role: 'footer', className: 'dialog-ft' },
-  					this.props.buttons.map(function (button) {
+  					this.props.buttons.map(function (button, index) {
   						return _react2['default'].createElement(
   							'button',
-  							{ role: 'button', key: button.text, className: 'btn', onClick: self.comfirm },
+  							{ role: 'button', key: index, className: 'btn', onClick: self.comfirm },
   							button.text
   						);
   					})
