@@ -70,7 +70,7 @@ define('pages/redux/app', function(require, exports, module) {
   
   function mapStateToProps(state) {
       return {
-          todos: state.add || []
+          todos: state.todos || []
       };
   }
   

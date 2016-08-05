@@ -36,7 +36,6 @@ define('pages/redux/input', function(require, exports, module) {
   		key: 'handleSubmit',
   		value: function handleSubmit(e) {
   			var text = e.target.value;
-  			console.log(text);
   			if (e.which === 13) {
   				this.props.onSubmit(text);
   				this.setState({

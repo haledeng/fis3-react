@@ -1,5 +1,6 @@
 define('pages/redux/action', function(require, exports, module) {
 
+  // action
   'use strict';
   
   Object.defineProperty(exports, '__esModule', {

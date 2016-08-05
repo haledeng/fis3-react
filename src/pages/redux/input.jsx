@@ -10,7 +10,6 @@ class Input extends Component {
 	}
 	handleSubmit(e) {
 		const text = e.target.value;
-		console.log(text);
 		if (e.which === 13) {
 			this.props.onSubmit(text);
 			this.setState({

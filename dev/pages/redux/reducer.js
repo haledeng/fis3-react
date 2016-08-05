@@ -17,7 +17,7 @@ define('pages/redux/reducer', function(require, exports, module) {
   // state.add 访问
   // reducer返回的值保存在state.add中
   var rootReducer = (0, _redux.combineReducers)({
-    add: _reducerAdd2['default']
+    todos: _reducerAdd2['default']
   });
   
   exports['default'] = rootReducer;

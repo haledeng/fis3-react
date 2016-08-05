@@ -32,7 +32,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
-        todos: state.add || []
+        todos: state.todos || []
     }
 }
 

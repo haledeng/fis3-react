@@ -45,7 +45,7 @@ define('pages/redux/reducer', function(require, exports, module) {
   // state.add 访问
   // reducer返回的值保存在state.add中
   var rootReducer = (0, _redux.combineReducers)({
-    add: _reducerAdd2['default']
+    todos: _reducerAdd2['default']
   });
   
   exports['default'] = rootReducer;
@@ -118,7 +118,6 @@ define('pages/redux/input', function(require, exports, module) {
   		key: 'handleSubmit',
   		value: function handleSubmit(e) {
   			var text = e.target.value;
-  			console.log(text);
   			if (e.which === 13) {
   				this.props.onSubmit(text);
   				this.setState({
@@ -155,6 +154,7 @@ define('pages/redux/input', function(require, exports, module) {
 ;/*!pages/redux/action*/
 define('pages/redux/action', function(require, exports, module) {
 
+  // action
   'use strict';
   
   Object.defineProperty(exports, '__esModule', {
@@ -244,7 +244,7 @@ define('pages/redux/app', function(require, exports, module) {
   
   function mapStateToProps(state) {
       return {
-          todos: state.add || []
+          todos: state.todos || []
       };
   }
   
