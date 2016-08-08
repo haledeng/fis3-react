@@ -229,20 +229,10 @@ define('pages/index/container', function(require, exports, module) {
   				null,
   				_react2['default'].createElement(
   					'a',
-  					{ href: 'javascript:;',
-  						onClick: this.toggle.bind(this) },
-  					' ',
-  					showDialog ? 'click to hide' : 'click to show',
-  					' '
+  					{ href: 'javascript:;', onClick: this.toggle.bind(this) },
+  					showDialog ? 'click to hide' : 'click to show'
   				),
-  				' ',
-  				showDialog ? _react2['default'].createElement(_modulesDialogDialog2['default'], { title: 'dlg title',
-  					show: showDialog,
-  					content: content,
-  					buttons: buttons,
-  					confirm: this.confirm.bind(this)
-  				}) : null,
-  				' '
+  				showDialog ? _react2['default'].createElement(_modulesDialogDialog2['default'], { title: 'dlg title', show: showDialog, content: content, buttons: buttons, confirm: this.confirm.bind(this) }) : null
   			);
   		}
   	}]);

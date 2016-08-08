@@ -37,27 +37,17 @@ class Container extends React.Component {
 			showDialog,
 			content
 		} = this.state;
-		return ( < div >
-			< a href = "javascript:;"
-			onClick = {
-				this.toggle.bind(this)
-			} > {
-				showDialog ? 'click to hide' : 'click to show'
-			} < /a> {
-			showDialog ? < Dialog title = 'dlg title'
-			show = {
-				showDialog
-			}
-			content = {
-				content
-			}
-			buttons = {
-				buttons
-			}
-			confirm = {
-				this.confirm.bind(this)
-			}
-			/> : null} < /div >
+		return ( 
+			<div>
+			<a href = "javascript:;" onClick={this.toggle.bind(this)}> 
+				{showDialog ? 'click to hide' : 'click to show'} 
+			</a> 
+			{
+				showDialog ? 
+				<Dialog title="dlg title" show={showDialog} content={content} buttons={buttons} confirm={this.confirm.bind(this)}/> 
+				: null
+			} 
+			</div>
 		)
 	}
 };

@@ -1,4 +1,4 @@
-define('pages/index/container', function(require, exports, module) {
+define('pages/extends/popup', function(require, exports, module) {
 
   'use strict';
   
@@ -20,72 +20,36 @@ define('pages/index/container', function(require, exports, module) {
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _modulesDialogDialog = require('modules/dialog/dialog');
+  var Popup = (function (_Component) {
+  	_inherits(Popup, _Component);
   
-  var _modulesDialogDialog2 = _interopRequireDefault(_modulesDialogDialog);
+  	function Popup(props, context) {
+  		_classCallCheck(this, Popup);
   
-  var buttons = [{
-  	text: 'confirm'
-  }, {
-  	text: 'cancel'
-  }];
-  
-  var Container = (function (_React$Component) {
-  	_inherits(Container, _React$Component);
-  
-  	function Container(props, context) {
-  		_classCallCheck(this, Container);
-  
-  		_get(Object.getPrototypeOf(Container.prototype), 'constructor', this).call(this, props, context);
+  		_get(Object.getPrototypeOf(Popup.prototype), 'constructor', this).call(this, props, context);
   		this.state = {
-  			showDialog: false,
-  			content: 'click button to show'
+  			content: 'this is Popup'
   		};
   	}
   
-  	_createClass(Container, [{
-  		key: 'toggle',
-  		value: function toggle() {
-  			var showDialog = this.state.showDialog;
-  
-  			this.setState({
-  				showDialog: !showDialog,
-  				content: showDialog ? 'click button to show' : 'click button to hide'
-  			});
-  		}
-  	}, {
-  		key: 'confirm',
-  		value: function confirm() {
+  	_createClass(Popup, [{
+  		key: 'handleChick',
+  		value: function handleChick() {
   			this.setState(Object.assign({}, this.state, {
-  				showDialog: false
+  				content: 'change form outside'
   			}));
   		}
   	}, {
   		key: 'render',
   		value: function render() {
-  			var _state = this.state;
-  			var showDialog = _state.showDialog;
-  			var content = _state.content;
-  
-  			return _react2['default'].createElement(
-  				'div',
-  				null,
-  				_react2['default'].createElement(
-  					'a',
-  					{ href: 'javascript:;', onClick: this.toggle.bind(this) },
-  					showDialog ? 'click to hide' : 'click to show'
-  				),
-  				showDialog ? _react2['default'].createElement(_modulesDialogDialog2['default'], { title: 'dlg title', show: showDialog, content: content, buttons: buttons, confirm: this.confirm.bind(this) }) : null
-  			);
+  			return null;
   		}
   	}]);
   
-  	return Container;
-  })(_react2['default'].Component);
+  	return Popup;
+  })(_react.Component);
   
-  ;
-  
-  exports['default'] = Container;
+  exports['default'] = Popup;
   module.exports = exports['default'];
 
 });

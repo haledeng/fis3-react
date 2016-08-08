@@ -381,17 +381,6 @@ require.resourceMap({
             "uri": "./lib/react.js",
             "type": "js"
         },
-        "modules/dialog/dialog.less": {
-            "uri": "./modules/dialog/dialog.css",
-            "type": "css"
-        },
-        "modules/dialog/dialog.css.js": {
-            "uri": "./modules/dialog/dialog.css.js",
-            "type": "js",
-            "extras": {
-                "moduleId": "modules/dialog/dialog.css"
-            }
-        },
         "modules/dialog/dialog": {
             "uri": "./modules/dialog/dialog.js",
             "type": "js",
@@ -403,6 +392,13 @@ require.resourceMap({
             ],
             "pkg": "p1"
         },
+        "modules/dialog/dialog.css.js": {
+            "uri": "./modules/dialog/dialog.css.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "modules/dialog/dialog.css"
+            }
+        },
         "node_modules/classnames/index.js": {
             "uri": "./node_modules/classnames/index.js",
             "type": "js",
@@ -410,6 +406,10 @@ require.resourceMap({
                 "moduleId": "node_modules/classnames/index"
             },
             "pkg": "p1"
+        },
+        "modules/dialog/dialog.less": {
+            "uri": "./modules/dialog/dialog.css",
+            "type": "css"
         },
         "modules/popup/popup": {
             "uri": "./modules/popup/popup.js",
@@ -2535,6 +2535,30 @@ require.resourceMap({
             "uri": "./pages/redux/reducer-add.js",
             "type": "js",
             "pkg": "p2"
+        },
+        "pages/extends/index": {
+            "uri": "./pages/extends/index.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js",
+                "pages/extends/dialog",
+                "node_modules/react-dom/index.js"
+            ]
+        },
+        "pages/extends/dialog": {
+            "uri": "./pages/extends/dialog.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js",
+                "pages/extends/popup"
+            ]
+        },
+        "pages/extends/popup": {
+            "uri": "./pages/extends/popup.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js"
+            ]
         }
     },
     "pkg": {
