@@ -21,3 +21,9 @@ react 包可以使用node_modules来处理, fis3-hook-node_modules
 
 ### dom操作
 + 通过state或者props来触发dom的更新操作
+
+
+### FE方案
++ [fit-component](https://github.com/fit-component)
++ [fit.baidu.com](http://fit.baidu.com)
++ 这个组件体系一个比较好的方案  fis + react + redux + es6

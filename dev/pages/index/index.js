@@ -8,8 +8,12 @@ define('pages/index/index', function(require, exports, module) {
   
   var _react2 = _interopRequireDefault(_react);
   
+  var _container = require('pages/index/container');
+  
+  var _container2 = _interopRequireDefault(_container);
+  
   var _reactDom = require('node_modules/react-dom/index');
   
-  (0, _reactDom.render)(_react2['default'].createElement(Container, null), document.getElementById('container'));
+  (0, _reactDom.render)(_react2['default'].createElement(_container2['default'], null), document.getElementById('container'));
 
 });

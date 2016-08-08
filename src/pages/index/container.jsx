@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+	Component
+} from 'react';
 import Dialog from '../../modules/dialog/dialog';
 
 const buttons = [{
@@ -7,19 +9,15 @@ const buttons = [{
 	text: 'cancel'
 }];
 
-const confirm = () => {
-	console.log('comfirm');
-}
 
-
-const Container = React.createClass({
-	getInitialState() {
-		return {
+class Container extends React.Component {
+	constructor(props, context) {
+		super(props, context)
+		this.state = {
 			showDialog: false,
-			content: ''
+			content: 'click button to show'
 		}
-	},
-
+	}
 	toggle() {
 		let {
 			showDialog
@@ -27,8 +25,13 @@ const Container = React.createClass({
 		this.setState({
 			showDialog: !showDialog,
 			content: showDialog ? 'click button to show' : 'click button to hide'
-		});
-	},
+		})
+	}
+	confirm() {
+		this.setState(Object.assign({}, this.state, {
+			showDialog: false
+		}));
+	}
 	render() {
 		let {
 			showDialog,
@@ -36,30 +39,28 @@ const Container = React.createClass({
 		} = this.state;
 		return ( < div >
 			< a href = "javascript:;"
-			style = {
-				{
-					marginBottom: "10px"
-				}
-			}
 			onClick = {
-				this.toggle
+				this.toggle.bind(this)
 			} > {
 				showDialog ? 'click to hide' : 'click to show'
 			} < /a> {
 			showDialog ? < Dialog title = 'dlg title'
+			show = {
+				showDialog
+			}
 			content = {
 				content
 			}
 			buttons = {
 				buttons
 			}
-			comfirm = {
-				confirm
+			confirm = {
+				this.confirm.bind(this)
 			}
 			/> : null} < /div >
 		)
 	}
-});
+};
 
 
-export default Container
+export default Container;
