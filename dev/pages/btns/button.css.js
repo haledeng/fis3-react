@@ -1,0 +1,26 @@
+define('pages/btns/button.css', function(require, exports, module) {
+
+  (function() {
+      var cssContent = '.btn  {      font-size: 14px;      font-weight: normal;      line-height: 1.42857143;        display: inline-block;        margin-bottom: 0;      padding: 6px 12px;        cursor: pointer;      -webkit-user-select: none;         -moz-user-select: none;          -ms-user-select: none;              user-select: none;      text-align: center;      vertical-align: middle;      white-space: nowrap;        border: 1px solid transparent;      border-radius: 4px;      background-image: none;        -ms-touch-action: manipulation;          touch-action: manipulation;  }    .btn:focus,  .btn:active:focus,  .btn.active:focus,  .btn.focus,  .btn:active.focus,  .btn.active.focus  {      outline: thin dotted;      outline: 5px auto -webkit-focus-ring-color;      outline-offset: -2px;  }  .btn:hover,  .btn:focus,  .btn.focus  {      text-decoration: none;        color: #333;  }  .btn:active,  .btn.active  {      outline: 0;      background-image: none;      -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);              box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);  }      .btn-default  {      color: #333;      border-color: #ccc;      background-color: #fff;  }  .btn-default:focus,  .btn-default.focus  {      color: #333;      border-color: #8c8c8c;      background-color: #e6e6e6;  }  .btn-default:hover  {      color: #333;      border-color: #adadad;      background-color: #e6e6e6;  }  .btn-default:active,  .btn-default.active,  .open > .dropdown-toggle.btn-default  {      color: #333;      border-color: #adadad;      background-color: #e6e6e6;  }  ';
+      var injectCssFn = (function (css) {
+      var headEl = document.getElementsByTagName('head')[0];
+      var styleEl = document.createElement('style');
+      headEl.appendChild(styleEl);
+      
+      if (styleEl.styleSheet) {
+          if (!styleEl.styleSheet.disabled) {
+              styleEl.styleSheet.cssText = css;
+          }
+      } else {
+          try {
+              styleEl.innerHTML = css
+          } catch(e) {
+              styleEl.innerText = css;
+          }
+      }
+  });
+  
+      injectCssFn(cssContent);
+  })();
+
+});

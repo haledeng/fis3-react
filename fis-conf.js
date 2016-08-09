@@ -28,9 +28,16 @@ fis.match('/{node_modules,modules}/**.{js,jsx}', {
 	.match('*.less', {
 		parser: fis.plugin('less-2.x', {}),
 		rExt: '.css',
+		release: false
 
 	})
+	.match('pages/**.{less,css}', {
+		release: false
+	})
 	.match('**.{js,es,es6,jsx,ts,tsx}', {
+		// dep | dependency 【推荐】 简单的标记依赖，并将js语句中对应的 require 语句去除。fis 的资源加载程序能够分析到这块，并最终以 <link> 的方式加载 css.
+		// embed | inline 将目标 css 文件转换成 js 语句, 并直接内嵌在当前 js 中，替换原有 require 语句。
+		// jsRequire 将目标 css 文件转换成 js 语句，但是并不内嵌，而是产出一份同名的 js 文件，当前 require 语句替换成指向新产生的文件。
 		preprocessor: fis.plugin('js-require-css', {
 			mode: 'jsRequire'
 		})
@@ -58,6 +65,10 @@ fis.media('dev')
 			'pkg/redux.js': [
 				'/pages/redux/index.jsx',
 				'/pages/redux/index.jsx:deps'
+			],
+			'pkg/btns.js': [
+				'/pages/btns/index.jsx',
+				'/pages/btns/index.jsx:deps'
 			],
 			// js-require-css 不能设置 mode: 'jsRequire'，改变了css的isCssLike属性
 			// 'pkg/index.css': [

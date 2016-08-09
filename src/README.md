@@ -27,3 +27,9 @@ react 包可以使用node_modules来处理, fis3-hook-node_modules
 + [fit-component](https://github.com/fit-component)
 + [fit.baidu.com](http://fit.baidu.com)
 + 这个组件体系一个比较好的方案  fis + react + redux + es6
+
+
+### react-bootstrap
++ css没有模块化
++ react重写了html和js部分
++ 整个组织结构趋近于一个component体系

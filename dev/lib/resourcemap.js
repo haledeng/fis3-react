@@ -8,12 +8,15 @@ require.resourceMap({
             "uri": "./lib/resourcemap.js",
             "type": "js"
         },
-        "lib/react-dom.js": {
-            "uri": "./lib/react-dom.js",
+        "pages/btns/index": {
+            "uri": "./pages/btns/index.js",
             "type": "js",
             "deps": [
-                "node_modules/react/react.js"
-            ]
+                "node_modules/react/react.js",
+                "node_modules/react-dom/index.js",
+                "pages/btns/button"
+            ],
+            "pkg": "p3"
         },
         "node_modules/react/react.js": {
             "uri": "./node_modules/react/react.js",
@@ -376,63 +379,6 @@ require.resourceMap({
                 "node_modules/fbjs/lib/invariant.js"
             ],
             "pkg": "p0"
-        },
-        "lib/react.js": {
-            "uri": "./lib/react.js",
-            "type": "js"
-        },
-        "modules/dialog/dialog": {
-            "uri": "./modules/dialog/dialog.js",
-            "type": "js",
-            "extras": {},
-            "deps": [
-                "modules/dialog/dialog.css",
-                "node_modules/classnames/index.js",
-                "node_modules/react/react.js"
-            ],
-            "pkg": "p1"
-        },
-        "modules/dialog/dialog.css.js": {
-            "uri": "./modules/dialog/dialog.css.js",
-            "type": "js",
-            "extras": {
-                "moduleId": "modules/dialog/dialog.css"
-            }
-        },
-        "node_modules/classnames/index.js": {
-            "uri": "./node_modules/classnames/index.js",
-            "type": "js",
-            "extras": {
-                "moduleId": "node_modules/classnames/index"
-            },
-            "pkg": "p1"
-        },
-        "modules/dialog/dialog.less": {
-            "uri": "./modules/dialog/dialog.css",
-            "type": "css"
-        },
-        "modules/popup/popup": {
-            "uri": "./modules/popup/popup.js",
-            "type": "js"
-        },
-        "pages/index/container": {
-            "uri": "./pages/index/container.js",
-            "type": "js",
-            "deps": [
-                "node_modules/react/react.js",
-                "modules/dialog/dialog"
-            ],
-            "pkg": "p1"
-        },
-        "pages/index/index": {
-            "uri": "./pages/index/index.js",
-            "type": "js",
-            "deps": [
-                "node_modules/react/react.js",
-                "pages/index/container",
-                "node_modules/react-dom/index.js"
-            ],
-            "pkg": "p1"
         },
         "node_modules/react-dom/index.js": {
             "uri": "./node_modules/react-dom/index.js",
@@ -2236,6 +2182,112 @@ require.resourceMap({
             ],
             "pkg": "p0"
         },
+        "pages/btns/button.css.js": {
+            "uri": "./pages/btns/button.css.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "pages/btns/button.css"
+            }
+        },
+        "pages/btns/button": {
+            "uri": "./pages/btns/button.js",
+            "type": "js",
+            "extras": {},
+            "deps": [
+                "node_modules/classnames/index.js",
+                "node_modules/react/react.js",
+                "pages/btns/button.css"
+            ],
+            "pkg": "p3"
+        },
+        "node_modules/classnames/index.js": {
+            "uri": "./node_modules/classnames/index.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/classnames/index"
+            },
+            "pkg": "p1"
+        },
+        "pages/extends/index": {
+            "uri": "./pages/extends/index.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js",
+                "pages/extends/dialog",
+                "node_modules/react-dom/index.js"
+            ]
+        },
+        "pages/extends/dialog": {
+            "uri": "./pages/extends/dialog.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js",
+                "pages/extends/popup"
+            ]
+        },
+        "pages/extends/popup": {
+            "uri": "./pages/extends/popup.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js"
+            ]
+        },
+        "pages/index/index": {
+            "uri": "./pages/index/index.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js",
+                "pages/index/container",
+                "node_modules/react-dom/index.js"
+            ],
+            "pkg": "p1"
+        },
+        "pages/index/container": {
+            "uri": "./pages/index/container.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js",
+                "modules/dialog/dialog"
+            ],
+            "pkg": "p1"
+        },
+        "modules/dialog/dialog.css.js": {
+            "uri": "./modules/dialog/dialog.css.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "modules/dialog/dialog.css"
+            }
+        },
+        "modules/dialog/dialog": {
+            "uri": "./modules/dialog/dialog.js",
+            "type": "js",
+            "extras": {},
+            "deps": [
+                "modules/dialog/dialog.css",
+                "node_modules/classnames/index.js",
+                "node_modules/react/react.js"
+            ],
+            "pkg": "p1"
+        },
+        "lib/react-dom.js": {
+            "uri": "./lib/react-dom.js",
+            "type": "js",
+            "deps": [
+                "node_modules/react/react.js"
+            ]
+        },
+        "lib/react.js": {
+            "uri": "./lib/react.js",
+            "type": "js"
+        },
+        "modules/common.css": {
+            "uri": "./modules/common.css",
+            "type": "css"
+        },
+        "modules/popup/popup": {
+            "uri": "./modules/popup/popup.js",
+            "type": "js"
+        },
         "pages/redux/action": {
             "uri": "./pages/redux/action.js",
             "type": "js",
@@ -2535,30 +2587,6 @@ require.resourceMap({
             "uri": "./pages/redux/reducer-add.js",
             "type": "js",
             "pkg": "p2"
-        },
-        "pages/extends/index": {
-            "uri": "./pages/extends/index.js",
-            "type": "js",
-            "deps": [
-                "node_modules/react/react.js",
-                "pages/extends/dialog",
-                "node_modules/react-dom/index.js"
-            ]
-        },
-        "pages/extends/dialog": {
-            "uri": "./pages/extends/dialog.js",
-            "type": "js",
-            "deps": [
-                "node_modules/react/react.js",
-                "pages/extends/popup"
-            ]
-        },
-        "pages/extends/popup": {
-            "uri": "./pages/extends/popup.js",
-            "type": "js",
-            "deps": [
-                "node_modules/react/react.js"
-            ]
         }
     },
     "pkg": {
@@ -2792,6 +2820,20 @@ require.resourceMap({
                 "node_modules/redux/lib/index.js",
                 "node_modules/react/react.js",
                 "node_modules/react-redux/lib/index.js",
+                "node_modules/react-dom/index.js"
+            ]
+        },
+        "p3": {
+            "uri": "./pkg/btns.js",
+            "type": "js",
+            "has": [
+                "pages/btns/button",
+                "pages/btns/index"
+            ],
+            "deps": [
+                "node_modules/classnames/index.js",
+                "node_modules/react/react.js",
+                "pages/btns/button.css",
                 "node_modules/react-dom/index.js"
             ]
         }
