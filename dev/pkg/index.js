@@ -1,3 +1,20 @@
+;/*!modules/dialog/dialog.less*/
+define('modules/dialog/dialog.less', function(require, exports, module) {
+
+  function importStyle(css, id) {
+  	var ele = document.createElement('style');
+  	ele.id = id;
+  	document.getElementsByTagName('head')[0].appendChild(ele);
+  	if (ele.styleSheet) {
+  		ele.styleSheet.cssText = css;
+  	} else {
+  		ele.appendChild(document.createTextNode(css));
+  	}
+  }
+   importStyle(".dialog {  position: relative;  display: inline-block;  vertical-align: middle;  *display: inline;  *zoom: 1;}.dialog a {  text-decoration: none;}.dialog-hd,.dialog-inner {  position: relative;}.dialog-hd .dialog-close,.dialog-hd .maximize,.dialog-hd .minimize,.dialog-hd .recovery {  position: absolute;  display: block;}.dialog-title {  overflow: hidden;  white-space: nowrap;  text-overflow: ellipsis;}.dialog-close {  position: absolute;  display: block;}.dialog-container {  overflow: hidden;}.dialog {  padding: 5px;}.dialog-hd {  height: 34px;  border-bottom: 1px solid;}.mr5 {  margin-right: 5px;}.dialog-title {  font-size: 16px;  line-height: 34px;  padding: 0 40px 0 10px;}.dialog-close {  font-size: 24px;  font-weight: 700;  line-height: 20px;  top: 7px;  right: 7px;  width: 20px;  height: 20px;  text-align: center;}.dialog-ft {  overflow: hidden;  text-align: center;}.dialog {  width: 380px;}.dialog-bd {  padding: 20px;}.dialog-ft {  padding-right: 20px;  padding-bottom: 20px;  padding-left: 20px;}.dialog-mn {  width: 220px;}.dialog-mn .dialog-bd {  padding: 10px;}.dialog-mn .dialog-container {  min-height: 40px;}.dialog-mn .dialog-ft {  padding-bottom: 10px;}.dialog-sm {  width: 300px;}.dialog-sm .dialog-bd {  padding: 10px;}.dialog-sm .dialog-container {  min-height: 80px;}.dialog-sm .dialog-ft {  padding-bottom: 10px;}.dialog-lg {  width: 480px;}.dialog-lg .dialog-container {  min-height: 160px;}.dialog-lgt {  width: 680px;}.dialog-lgt .dialog-bd {  padding: 0 0 20px;}.dialog-lgt .dialog-container {  overflow-y: auto;  height: 550px;}.dialog-notitle .dialog-bd {  padding-top: 30px;}.dialog {  background-color: rgba(0, 0, 0, 0.3) !important;  background-color: #666 \9;}.dialog-inner {  background-color: #fff;}.dialog-hd {  border-bottom-color: #dfdfdf;  background-color: #fefefe;}.dialog-close {  color: #b6b6b6;}.dialog-close:hover {  color: #a1a1a1;}.dialog-notitle .dialog-inner {  background-color: #fff;}.btn {  display: inline-block;  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box;  cursor: pointer;  -webkit-transition: .15s;  -moz-transition: .15s;  transition: .15s;  text-align: center;  vertical-align: middle;  white-space: nowrap;  text-decoration: none;  text-overflow: ellipsis;  color: #656565;  border: 1px solid;  border-color: #e2e2e2;  -webkit-border-radius: 2px;  -moz-border-radius: 2px;  border-radius: 2px;  background-color: #f0f0f0;  -webkit-background-clip: padding-box;  -moz-background-clip: padding;  background-clip: padding-box;  *display: inline;  *zoom: 1;  border-radius: 0;  padding: 4px 24px;  height: 30px;  padding: 4px 19px;  line-height: 20px;}", "modules/dialog/dialog.less");
+
+});
+
 ;/*!node_modules/classnames/index.js*/
 define('node_modules/classnames/index', function(require, exports, module) {
 
@@ -72,7 +89,7 @@ define('modules/dialog/dialog', function(require, exports, module) {
   
   function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
   
-  require('modules/dialog/dialog.css');
+  require('modules/dialog/dialog.less');
   
   var _classnames = require('node_modules/classnames/index');
   
